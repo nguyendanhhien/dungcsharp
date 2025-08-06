@@ -2,28 +2,26 @@
 
 public class Program
 {
-    public static void Main(string[] args)
-    {
-        Console.WriteLine("Hay nhap chuoi ban can dem so ki tu: ");
-        string input = Console.ReadLine();
-
-        Console.Write("Nhap ky tu can dem: ");
-        char inputChar = char.Parse(Console.ReadLine());
-
-        int count = CountCharacter(input, inputChar);
-        Console.WriteLine($"Ky tu '{inputChar}' xuat hien {count} lan.");
-    }
-
-    public static int CountCharacter(string input, char inputChar)
+    public static int CountCharacter(string str, char ch)
     {
         int count = 0;
-        for (int i = 0; i < input.Length; i++)
+        for (int i = 0; i < str.Length; i++)
         {
-            if (input[i] == inputChar)
+            if (str[i] == ch)
             {
                 count++;
             }
         }
         return count;
+    }
+
+    public static void Main(string[] args)
+    {
+        string str = "hello world";
+        Console.Write("Enter a character to count: ");
+        char inputChar = char.Parse(Console.ReadLine());
+
+        int result = CountCharacter(str, inputChar);
+        Console.WriteLine($"Character '{inputChar}' appears {result} time(s).");
     }
 }
